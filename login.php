@@ -19,13 +19,13 @@
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0/dist/css/bootstrap.min.css" integrity="sha384-gH2yIJqKdNHPEq0n4Mqa/HGKIhSkIHeL5AyhkYV8i59U5AR6csBvApHHNl/vI1Bx" crossorigin="anonymous">
     <style>
 
-        .container{
-            border: 2px solid red;
+        #container{
+            /* border: 2px solid red; */
             padding-left: 50px;
-            font-size: 30px;  
+            font-size: 15px;  
             font-family:'Rammetto One', cursive;
         }
-        .container label,input,button{
+        #container label,input,button{
             display: block;
             margin-bottom: 10px;
         }
@@ -43,8 +43,8 @@
     </style>
 </head>
 <body>
-    <div class="container">
-
+    <div class="contain">
+        <form action="login.php" method="POST" id="container">
         <h2>Login</h2>
         <label for="email">Email</label>
         <input type="email" name="emailaddress" id="input_email" placeholder="Enter your email address" required = "required">
@@ -54,11 +54,11 @@
 
         <button type="submit" class="login-btn">Login</button>
 
-        <div class="alert alert-danger"></div>
-        <div class="alert alert-success"></div>
-
-
+        <div class="alert alert-danger js-error" style="display:none;">probe</div>
+        <div class="alert alert-success js-success" style="display:none;">probe</div>
+        </form>
     </div>
-    <?php require_once 'footer.php' ?>
+
+    <?php require_once 'footer.php'?>
 </body>
 </html>

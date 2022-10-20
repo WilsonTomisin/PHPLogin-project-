@@ -22,12 +22,12 @@
         .container{
             border: 2px solid red;
             padding-left: 50px;
-            font-size: 30px;  
+            font-size: 15px;  
             font-family:'Rammetto One', cursive;
         }
         .container label,input,button{
             display: block;
-            margin-bottom: 10px;
+            margin-bottom:10px;
         }
 
         input{
@@ -43,31 +43,20 @@
     </style>
 </head>
 <body>
-    <div class="container">
-
+    <div class="contain">
+        <form id="container">
         <h2>Register</h2>
-        <label for="firstname">Firstname</label>
-        <input type="text" placeholder="enter firstname" name="firstname" id="fn">
+            <label for="email">Email</label>
+            <input type="email" name="emailaddress" id="input_email" placeholder="Enter your email address" required = "required">
 
-        <label for="firstname">Lastname</label>
-        <input type="text" placeholder="enter lastname" name="lastname" id="ln">
+            <label for="password">Password</label>
+            <input type="password" name="passcode" id="passwrd" placeholder="Enter your password..." required = "required">
 
-        <label for="firstname">Other names</label>
-        <input type="text" placeholder="other-names..." name="othername" id="on">
+            <button type="submit" class="login-btn">Login</button>
 
-        <label for="email">Email</label>
-        <input type="email" name="emailaddress" id="input_email" placeholder="Enter your email address" required = "required">
-
-        <label for="password">Password</label>
-        <input type="password" name="passcode" id="passwrd1" placeholder="Enter your password..." required = "required">
-
-        <label for="password">confirm password</label>
-        <input type="password" name="passcode" id="passwrd2" placeholder="confirm your password..." required = "required">
-
-        <button type="submit" class="reg-btn">Register</button>
-
-
-
+            <div class="alert alert-danger js-error" style="display:none;">probe</div>
+            <div class="alert alert-success js-success" style="display: none ;">probe</div>
+        </form>
     </div>
     <?php require_once 'footer.php' ?>
 </body>

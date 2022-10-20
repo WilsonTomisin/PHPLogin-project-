@@ -4,5 +4,5 @@
     echo $msg;
 ?>
 
-    <a href="login.php">Login</a><br>
+    <a href="login.php">Login</a><br> 
     <a href="register.php">Sign up</a>
