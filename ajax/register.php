@@ -13,10 +13,11 @@
          // Always return JSON format.
       
         
-       // $return = ["success"=>true,"failed"=>false];
+        $return = [];
 
   
-        $return["redirect"] = "../index.php";
+        $return["redirect"] = "index.php?='this_was_a_redirect.'";
+        //$return["name"] = "Wilson Tomisin";
         echo json_encode($return, JSON_PRETTY_PRINT); die();
     } else{
         die('dead');

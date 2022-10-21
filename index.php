@@ -1,6 +1,6 @@
 <?php
     $msg = '<h1>Hello World</h1> <br /> <hr>';
-    $msg .= "Today's Date is: ". date('Y M D');
+    $msg .= "Today's Date is: ". date('D d M Y');
     echo $msg;
 ?>
 

@@ -40,7 +40,7 @@
 
  $(document).ready(function()  {
    $("form").submit(function(event) {
-      console.log("submitted");
+      // console.log("submitted");
          //alert("form was submitted.")
          event.preventDefault();
    
@@ -66,22 +66,23 @@
          //$succ.hide()
          $.ajax({
             type: 'POST',
-            url:"/PHPLOGINPRJ/ajax/register.php",
+            url:"ajax/register.php",
             data: $data,
             dataType: 'json',
             async: true,
-            success: function(res) {
-               console.log(res.redirect)
-               window.location.href = res.redirect
-
-               // if (res.redirect !== undefined) {
-               //    window.location.href = res.redirect
-               // }
+            success: function successful(res) {
+               if (res.redirect !== undefined) {
+                  window.location.href = res.redirect
+                  //console.log(res)
+                  //alert(res.name)
+               }
                
             },
-            error: function(err) {
+            error: function errfunc(err) {
                document.write(err+" did happen, please retry");
-               console.log("error"+ err);
+               console.log("error   "+ Object.entries(err))
+               console.log("new error: ", err.responseText)
+               
           }
    
             
