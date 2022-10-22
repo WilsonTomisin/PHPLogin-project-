@@ -73,8 +73,9 @@
             success: function successful(res) {
                if (res.redirect !== undefined) {
                   window.location.href = res.redirect
-                  //console.log(res)
-                  //alert(res.name)
+         
+               } else if (res.error !== undefined) {
+                  $error.text(res.error).show()
                }
                
             },
@@ -83,7 +84,7 @@
                console.log("error   "+ Object.entries(err))
                console.log("new error: ", err.responseText)
                
-          }
+            }
    
             
          })

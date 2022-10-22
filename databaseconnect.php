@@ -31,7 +31,7 @@
         public static function getconnect(){
 
             // if the class has not been started,start it.
-            if (! self::$con) {
+            if (!self::$con) {
                 new DB();
             }
             return self::$con;
