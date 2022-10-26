@@ -44,7 +44,7 @@
 </head>
 <body>
     <div class="contain">
-        <form action="login.php" id="container">
+        <form  id="logContainer">
         <h2>Login</h2>
         <label for="email">Email</label>
         <input type="email" name="emailaddress" id="input_email" placeholder="Enter your email address" required = "required">

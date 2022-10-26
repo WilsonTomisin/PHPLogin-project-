@@ -21,7 +21,7 @@
                 self::$con = new PDO("mysql:chareset={$this->charset};dbhost={$this->host};port ={$this->port};dbname={$this->dbname}",$this->username,$this->password);
                 self::$con->setAttribute(PDO::ATTR_ERRMODE,PDO::ERRMODE_EXCEPTION);
                 self::$con->setAttribute(PDO::ATTR_PERSISTENT,false);
-                //echo 'CONNECTED...';
+            
             } catch (PDOException $e) {
                 echo 'There was an error: '. $e->getMessage();
             }

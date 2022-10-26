@@ -5,6 +5,11 @@
         // professionally we can redirect or thrown in a server error.
     }
 
+    // START  SESSION
+    if (!isset($_SESSION)) {
+        session_start();
+    }
+
     // DISPLAY ERRORS
     error_reporting(-1);
     ini_set('display_errors', 'on');

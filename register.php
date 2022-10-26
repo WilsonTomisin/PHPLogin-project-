@@ -39,12 +39,14 @@
             padding: 5px 25px;
             background-color: rgb(32, 96, 150);
         }
-
+        .js-error, .js-success{
+            display: inline-block;
+        }
     </style>
 </head>
 <body>
     <div class="contain">
-        <form id="container">
+        <form id="regContainer">
         <h2>Register</h2>
             <label for="email">Email</label>
             <input type="email" name="emailaddress" id="input_email" placeholder="Enter your email address" required = "required">
