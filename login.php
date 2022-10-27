@@ -3,7 +3,8 @@
     define("__CONFIG__", true);
     require_once 'config.php';
 
-
+    // checkSessionID();
+    forceLogin();
 
 ?>
 <!DOCTYPE html>

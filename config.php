@@ -18,6 +18,7 @@
 
     require_once 'databaseconnect.php';
     require_once "filter.php";
+    require "functions/func1.php";
 
     $conn  = DB::getconnect();
 
