@@ -20,15 +20,20 @@
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0/dist/css/bootstrap.min.css" integrity="sha384-gH2yIJqKdNHPEq0n4Mqa/HGKIhSkIHeL5AyhkYV8i59U5AR6csBvApHHNl/vI1Bx" crossorigin="anonymous">
     <style>
 
-        .container{
-            border: 2px solid red;
+        .contain #regContainer{
+            /* border: 2px solid red; */
             padding-left: 50px;
             font-size: 15px;  
-            font-family:'Rammetto One', cursive;
+            /* font-family:'Rammetto One', cursive; */
         }
-        .container label,input,button{
+        .contain #regContainer label,input,button{
             display: block;
             margin-bottom:10px;
+        }
+        .contain #regContainer input[type= radio]{
+            display: inline-block;
+            padding: 0px;
+            min-width: 0%;
         }
 
         input{
@@ -49,13 +54,29 @@
     <div class="contain">
         <form id="regContainer">
         <h2>Register</h2>
+            <label for="firstname">Firstname</label>
+            <input type="text" name="firstname" required placeholder="enter your firstname">
+
+            <label for="lastname">lastname</label>
+            <input type="text2" name="lastname" required placeholder="enter your lastname">
+
             <label for="email">Email</label>
             <input type="email" name="emailaddress" id="input_email" placeholder="Enter your email address" required = "required">
-
+            
             <label for="password">Password</label>
             <input type="password" name="passcode" id="passwrd" placeholder="Enter your password..." required = "required">
 
-            <button type="submit" class="login-btn">Login</button>
+            <label for="confirmpassword">Confirm your password</label>
+            <input type="password" name="confirmpasscode" id="confirmpasswrd" placeholder="Enter your password again please..." required = "required">
+            
+            <p>Select your gender</p>
+            <input type="radio" name="male" id="man" value="male">
+            <label for="male" style="display:inline-block;margin-right:10px;">male</label>
+            
+            <input type="radio" name="female" id="woman" value="female">
+            <label for="female" style="display:inline-block;">female</label>
+
+            <button type="submit" class="reg-btn">register</button>
 
             <div class="alert alert-danger js-error" style="display:none;">probe</div>
             <div class="alert alert-success js-success" style="display: none ;">probe</div>

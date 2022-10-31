@@ -1,34 +1,39 @@
  $(document).ready(function()  {
    $("#regContainer").submit(function(event) {
-      // console.log("submitted");
-         //alert("form was submitted.")
+      
          event.preventDefault();
    
          var $form = $(".contain #regContainer")
          var $data ={
+            firstname:$("input[name = 'firstname']",$form).val(),
+            lastname:$("input[name ='lastname']",$form).val(),
             email:$("input[type='email']",$form).val(),
-            password:$("input[type='password']",$form).val()
+            password:$("input[type='password']",$form).val(),
+            conpassword:$("input[name='confirmpasscode']",$form).val(),
+            gender:$("input[type='radio']",$form).val()
          }
          var $error = $(".js-error",$form)
          var $succ = $(".js-success",$form)
-         //console.log($data)
+         
 
+         var $passwrd = $data.password
+         var $conpasswrd = $data.conpassword
          if ($data.email.length <= 16) {
             $error.text('Enter a valid email address').show()
          } else if ($data.password.length <= 5) {
             $error.text('Enter a more secure password!').show()
+         } else if ($conpasswrd !== $passwrd) {
+            $error.text('passwords do not match').show()
          } else{
             $error.hide()
             $succ.text('valid details..').show()
-         
          }
-         //$error.hide()
-         //$succ.hide()
+
          $.ajax({
             type: 'POST',
             url:"ajax/register.php",
             data: $data,
-            dataType: 'json',
+            dataType: 'json', 
             async: true,
             success: function successful(res) {
                if (res.redirect !== undefined) {
@@ -49,13 +54,19 @@
             }
    
             
-         })
+         }).always(function ajaxAlways() {
+                  console.log('test.');
+            });
+         //$error.hide()
+         //$succ.hide()
+         
          // .always(function ajaxAlways(data) {
          //    console.log('test.');
          // })
 
          //return false
      })
+
     
  })
 

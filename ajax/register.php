@@ -8,10 +8,14 @@
       
         
         $return = [];
-        // check if the user exists..
+        // FILTER DATA INPUTS FROM FORM.
+        $fname = $_POST["text"];
+        $lname = $_POST["text2"];
         $email = Filter::String($_POST["email"]);
-        
         $password = password_hash($_POST["password"], PASSWORD_DEFAULT);
+        // $gender = $_POST["radio"];
+
+
         $findUser = $conn->prepare("SELECT user_id FROM usersinfo WHERE email = LOWER(:email) LIMIT 1 ");
         $findUser->bindParam(":email", $email, PDO::PARAM_STR);
         $findUser->execute();
@@ -23,9 +27,12 @@
             
         } else{
             // CREATE AN ACCOUNT.
-            $addUser = $conn->prepare("INSERT INTO usersinfo(email, password) VALUES(LOWER(:email),:password)");
+            $addUser = $conn->prepare("INSERT INTO usersinfo(Firstname,Lastname,email, password,Gender) VALUES(:Firstname,:Lastname,LOWER(:email),:password,:Gender)");
             $addUser->bindParam(":email",$email,PDO::PARAM_STR);
             $addUser->bindParam(":password",$password, PDO::PARAM_STR);
+            $addUser->bindParam(":Firstname",$fname,PDO::PARAM_STR);
+            $addUser->bindParam(":Lastname",$lname,PDO::PARAM_STR);
+            $addUser->bindParam(":Gender",$gender);
             $addUser->execute();
 
             //GETS THE LAST USER'S ID
