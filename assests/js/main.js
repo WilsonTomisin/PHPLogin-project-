@@ -1,3 +1,9 @@
+ function stopajax() {
+   
+ }
+
+
+ 
  $(document).ready(function()  {
    $("#regContainer").submit(function(event) {
       
@@ -10,7 +16,7 @@
             email:$("input[type='email']",$form).val(),
             password:$("input[type='password']",$form).val(),
             conpassword:$("input[name='confirmpasscode']",$form).val(),
-            gender:$("input[type='radio']",$form).val()
+            gender:$("input[name='gender']",$form).val()
          }
          var $error = $(".js-error",$form)
          var $succ = $(".js-success",$form)
@@ -23,13 +29,14 @@
          } else if ($data.password.length <= 5) {
             $error.text('Enter a more secure password!').show()
          } else if ($conpasswrd !== $passwrd) {
-            $error.text('passwords do not match').show()
+            $error.text('passwords do not match.Check your password.').show()
+            ajx.abort()
          } else{
             $error.hide()
             $succ.text('valid details..').show()
          }
 
-         $.ajax({
+         var ajx = $.ajax({
             type: 'POST',
             url:"ajax/register.php",
             data: $data,
@@ -57,14 +64,6 @@
          }).always(function ajaxAlways() {
                   console.log('test.');
             });
-         //$error.hide()
-         //$succ.hide()
-         
-         // .always(function ajaxAlways(data) {
-         //    console.log('test.');
-         // })
-
-         //return false
      })
 
     
@@ -74,8 +73,6 @@
  // LOGIN AJAX...
  $(document).ready(function()  {
    $("#logContainer").submit(function(event) {
-      // console.log("submitted");
-         //alert("form was submitted.")
          event.preventDefault();
    
          var $form = $(".contain #logContainer")

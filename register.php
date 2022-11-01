@@ -19,16 +19,28 @@
     <link href="https://fonts.googleapis.com/css2?family=Rammetto+One&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0/dist/css/bootstrap.min.css" integrity="sha384-gH2yIJqKdNHPEq0n4Mqa/HGKIhSkIHeL5AyhkYV8i59U5AR6csBvApHHNl/vI1Bx" crossorigin="anonymous">
     <style>
-
+        body{
+            background-color: teal;
+            color: white;
+        }
         .contain #regContainer{
             /* border: 2px solid red; */
             padding-left: 50px;
             font-size: 15px;  
             /* font-family:'Rammetto One', cursive; */
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%,-50%);
         }
-        .contain #regContainer label,input,button{
-            display: block;
+        .contain #regContainer label,input{
+            display: inline-block;
             margin-bottom:10px;
+            
+        }
+        .contain #regContainer button{
+            margin-top: 10px;
+            display: block;
         }
         .contain #regContainer input[type= radio]{
             display: inline-block;
@@ -70,10 +82,10 @@
             <input type="password" name="confirmpasscode" id="confirmpasswrd" placeholder="Enter your password again please..." required = "required">
             
             <p>Select your gender</p>
-            <input type="radio" name="male" id="man" value="male">
+            <input type="radio" name="gender" id="man" value="male">
             <label for="male" style="display:inline-block;margin-right:10px;">male</label>
             
-            <input type="radio" name="female" id="woman" value="female">
+            <input type="radio" name="gender" id="woman" value="female">
             <label for="female" style="display:inline-block;">female</label>
 
             <button type="submit" class="reg-btn">register</button>

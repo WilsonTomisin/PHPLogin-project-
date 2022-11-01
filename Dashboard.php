@@ -8,7 +8,7 @@
 
     $userId = $_SESSION['user_id'];
 
-    $findUser = $conn->prepare("SELECT email,time_created FROM usersinfo WHERE user_id = :userId LIMIT 1 ");
+    $findUser = $conn->prepare("SELECT * FROM usersinfo WHERE user_id = :userId LIMIT 1 ");
     $findUser->bindParam(':userId',$userId,PDO::PARAM_INT);
     $findUser->execute();
 
@@ -30,7 +30,7 @@
 </head>
 <body>
     <div>
-        <h1>Welcome <?php echo $user['email']; ?> </h1>
+        <h1>Welcome <?php echo $user['Firstname']; ?> </h1>
         <hr>
         <h4>
             Lorem ipsum dolor sit, amet consectetur adipisicing elit. 

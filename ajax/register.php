@@ -9,11 +9,11 @@
         
         $return = [];
         // FILTER DATA INPUTS FROM FORM.
-        $fname = $_POST["text"];
-        $lname = $_POST["text2"];
+        $fname = $_POST["firstname"];
+        $lname = $_POST["lastname"];
         $email = Filter::String($_POST["email"]);
         $password = password_hash($_POST["password"], PASSWORD_DEFAULT);
-        // $gender = $_POST["radio"];
+        $gender = $_POST["gender"];
 
 
         $findUser = $conn->prepare("SELECT user_id FROM usersinfo WHERE email = LOWER(:email) LIMIT 1 ");
