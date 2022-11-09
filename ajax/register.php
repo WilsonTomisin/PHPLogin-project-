@@ -14,6 +14,12 @@
         $email = Filter::String($_POST["email"]);
         $password = password_hash($_POST["password"], PASSWORD_DEFAULT);
         $gender = $_POST["gender"];
+        // if (!empty(($_POST['gender']))) {
+        //     $gender = $_POST['gender'];
+        //     echo $gender.' is the gender..';
+        // } else{
+        //     echo 'Please select a value.';
+        // }
 
 
         $findUser = $conn->prepare("SELECT user_id FROM usersinfo WHERE email = LOWER(:email) LIMIT 1 ");
@@ -32,7 +38,7 @@
             $addUser->bindParam(":password",$password, PDO::PARAM_STR);
             $addUser->bindParam(":Firstname",$fname,PDO::PARAM_STR);
             $addUser->bindParam(":Lastname",$lname,PDO::PARAM_STR);
-            $addUser->bindParam(":Gender",$gender);
+            $addUser->bindParam(":Gender",$gender, PDO::PARAM_STR);
             $addUser->execute();
 
             //GETS THE LAST USER'S ID

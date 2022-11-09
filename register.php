@@ -20,14 +20,20 @@
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0/dist/css/bootstrap.min.css" integrity="sha384-gH2yIJqKdNHPEq0n4Mqa/HGKIhSkIHeL5AyhkYV8i59U5AR6csBvApHHNl/vI1Bx" crossorigin="anonymous">
     <style>
         body{
-            background-color: teal;
+            background-color: #fff;
             color: white;
         }
+        
         .contain #regContainer{
-            /* border: 2px solid red; */
-            padding-left: 50px;
+            border-radius: 10px;
+            box-shadow: 0px 0px 100px gray;    
+            background-color:white;
+            color: darkblue;
+            padding-left: 30px;
+            padding-right: 30px;
+            padding-top: 30px;
+            padding-bottom: 30px;
             font-size: 15px;  
-            /* font-family:'Rammetto One', cursive; */
             position: absolute;
             top: 50%;
             left: 50%;
@@ -36,26 +42,34 @@
         .contain #regContainer label,input{
             display: inline-block;
             margin-bottom:10px;
+            border: none;
             
         }
         .contain #regContainer button{
+            all: unset;
+            color: white;
+            outline: none;
+            padding: 7px 30px;
+            background-color: darkblue;
             margin-top: 10px;
-            display: block;
-        }
-        .contain #regContainer input[type= radio]{
-            display: inline-block;
-            padding: 0px;
-            min-width: 0%;
-        }
+            display: block; 
+            border-radius: 7px;
 
+        }
         input{
             padding: 10px 25px;
             min-width: 30%;
         }
-        .reg-btn{
+        .contain #regContainer .reg-btn{
             font-size: 15px;
             padding: 5px 25px;
-            background-color: rgb(32, 96, 150);
+            background-color: darkblue;
+            transition: 1s all ease-in-out;
+        }
+        .contain #regContainer .reg-btn:hover{
+            color: darkblue;
+            box-shadow: 0px 0px 10px grey;
+            background-color: gainsboro;
         }
         .js-error, .js-success{
             display: inline-block;
@@ -82,13 +96,16 @@
             <input type="password" name="confirmpasscode" id="confirmpasswrd" placeholder="Enter your password again please..." required = "required">
             
             <p>Select your gender</p>
-            <input type="radio" name="gender" id="man" value="male">
-            <label for="male" style="display:inline-block;margin-right:10px;">male</label>
-            
-            <input type="radio" name="gender" id="woman" value="female">
-            <label for="female" style="display:inline-block;">female</label>
+                <select name="gender">
+                    <option value="" selected disabled>select gender</option>
+                    <option value="male">male</option>
+                    <option value="female">female</option>
+                    <option value="others">others</option>
+                </select>
+    
 
             <button type="submit" class="reg-btn">register</button>
+            <span><small>Or you have an account already?</small><a href="login.php">login</a></span>
 
             <div class="alert alert-danger js-error" style="display:none;">probe</div>
             <div class="alert alert-success js-success" style="display: none ;">probe</div>

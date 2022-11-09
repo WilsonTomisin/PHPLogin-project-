@@ -1,22 +1,17 @@
- function stopajax() {
-   
- }
-
-
- 
  $(document).ready(function()  {
    $("#regContainer").submit(function(event) {
       
          event.preventDefault();
    
          var $form = $(".contain #regContainer")
+      
          var $data ={
             firstname:$("input[name = 'firstname']",$form).val(),
             lastname:$("input[name ='lastname']",$form).val(),
             email:$("input[type='email']",$form).val(),
             password:$("input[type='password']",$form).val(),
-            conpassword:$("input[name='confirmpasscode']",$form).val(),
-            gender:$("input[name='gender']",$form).val()
+            conpassword:$("input[name= 'confirmpasscode']",$form).val(),
+            gender:$("select[name = 'gender']",$form).val()
          }
          var $error = $(".js-error",$form)
          var $succ = $(".js-success",$form)
