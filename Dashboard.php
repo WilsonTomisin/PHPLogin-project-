@@ -27,6 +27,19 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title> Dashboard|Welcome </title>
+    <style>
+        body div h1{
+            color: darkblue;
+            text-shadow: 0px 0px 20px grey;
+        }
+        body div a[ href="logout.php"]{
+            text-decoration: none;
+            background-color: darkblue;
+            color: #fff;
+            padding: 7px 25px;
+            border-radius: 7px;
+        }
+    </style>
 </head>
 <body>
     <div>
@@ -35,11 +48,11 @@
         <h4>
             Lorem ipsum dolor sit, amet consectetur adipisicing elit. 
             Reprehenderit quis accusantium error iure, aspernatur 
-            ex esse porro qui neque doloribus.
+            ex esse porro qui neque doloribus. <a href="test.html">read more</a>
         </h4>
         <h5>Sign in time: <?php echo date('D d M Y'); ?></h5>
         <h6>You created your account on: <?php echo $user['time_created'] ?></h6>
-        <a href="logout.php" target="_blank">logOut</a>
+        <a href="logout.php" >logOut</a>
     </div>
 </body>
 </html>

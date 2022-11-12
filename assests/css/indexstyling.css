@@ -1,0 +1,275 @@
+body{
+    margin: 0px;
+    font-family: 'Heebo', sans-serif;
+}
+.nav-section{
+    /* padding: 30px 20px 30px 20px; */
+    /* position: fixed;
+    width: 100%; */
+    min-width: 100%;
+    
+}
+.nav-section nav{
+    
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    background-color: gainsboro;
+    padding: 30px 20px 30px 20px;
+    
+    
+}
+.nav-section nav h1{
+    font-size: 30px;
+    color: darkblue;
+    font-family: 'Secular One', sans-serif;
+}
+.nav-section nav h1 span{
+    color: white;
+}
+.nav-section nav .links a{
+    display: inline-block;
+    text-decoration: none;
+    background-color: darkblue;
+    color: white;
+    padding: 7px 25px;
+    border-radius: 10px;
+    transition: .5s all ease-in-out;
+}
+.nav-section nav .links a:hover{
+    color: darkblue;
+    background-color: whitesmoke;
+    box-shadow: 0px 0px 20px black;
+}
+body main .top-container{
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 30px 20px 30px 20px;
+    font-family: 'Rubik Bubbles', cursive;
+    background: linear-gradient(darkblue,turquoise);
+
+}
+body main .top-container .left-col .text h3{
+    
+    font-size: 30px;
+    margin-bottom: -20px;
+}
+body main .top-container .left-col .text h1{
+    color: darkblue;
+    font-size: 40px;
+    margin-bottom: 35px;
+    transition: 2s all ease-in-out;
+}
+body main .top-container .left-col .text h1:hover{
+    /* transform: scale(1.2); */
+    font-size: 50px;
+    transform: translate(-20px);
+    text-decoration: dotted;
+}
+body main .top-container .left-col .text a{
+    text-decoration: none;
+    background-color: darkblue;
+    color: white;
+    padding: 7px 25px;
+    border-radius: 7px;
+    transition: all .5s ease-in-out;
+}
+body main .top-container .left-col .text a:hover{
+    transform: scale(-1.2);
+    color: darkblue;
+    background-color: gainsboro;
+    box-shadow: 0px 0px 30px grey;
+}
+body main .top-container .right-col img{
+    border-radius: 7px;
+    transition: 1s all ease-in-out;
+}
+body main .top-container .right-col img:hover{
+    border-radius: 50%;
+    box-shadow: 0px 0px 20px grey;
+}
+body main .middle-container{
+    display: flex;
+    align-items: center;
+    justify-content: space-evenly;
+    padding: 30px 20px 30px 20px;
+
+}
+body main .middle-container .cards{
+    height: 300px;
+    background-color: whitesmoke;
+    margin-right: 10px;
+    border-radius: 10px;
+    padding: 10px 10px 10px 10px;
+    text-align: center;
+    box-shadow: 5px 5px 10px grey;
+    font-size: 15px;
+    font-family: 'Heebo', sans-serif;
+    transition: 1s all ease-in-out;
+}
+body main .middle-container .cards i{
+    font-size: 30px;
+}
+body main .middle-container .cards:hover{
+    color: white;
+    background-color: gray;
+    box-shadow: -5px -10px 10px grey;
+}
+body main .bottom-container{
+    background: linear-gradient(90deg,darkblue,turquoise);
+    color: white;
+    height: 200px;
+    width: 100%;
+}
+body main .bottom-container .quote{
+    text-align: center;
+    position: relative;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%,-50%);
+    font-size: 20px;
+}
+body main .bottom-container .quote .text2{
+    font-family: 'Dancing Script', cursive;
+    font-size: 25px;
+}
+body main .bottom-container .quote .text2 span{
+    display: block;
+    font-family: cursive;
+}
+body main .white-section{
+    background-color: #fff;
+    width: 100%;
+    height: 90px;
+}
+body footer{
+    background: linear-gradient(90deg,darkblue,grey);
+    padding: 50px 70px;
+}
+body footer .footer-container{
+    text-align: center;
+    color: white;
+    font-size: 20px;
+}
+body footer .footer-container .social-links {
+    font-size: 35px;
+    color: white;
+    text-decoration: none;
+    margin-bottom: 10px;
+}
+body footer .footer-container .social-links i{
+    color: white;
+    margin-left: 7px;
+    transition: 1s all ease-in-out;
+}
+
+body footer .footer-container .social-links i[class="fa-brands fa-square-instagram"]:hover{
+    color: darkmagenta;
+    transform: rotate(360deg);
+}
+body footer .footer-container .social-links i[class="fa-brands fa-square-twitter"]:hover{
+    color: turquoise;
+    transform: rotate(360deg);
+}
+body footer .footer-container .social-links i[class="fa-brands fa-github"]:hover{
+    color: black;
+    transform: rotate(360deg);
+}
+body footer .footer-container .internal-links{
+    margin-bottom: 20px;
+    
+}
+body footer .footer-container .internal-links a{
+    font-size: 17px;
+    margin-right: 7px;
+    text-decoration: none;
+    color: white;
+    transition: 1s all ease-in-out;
+    
+}
+body footer .footer-container .internal-links a:hover{
+    color: black;
+}
+
+body footer .footer-container .footer-text{
+    color: grey;
+}
+@media (max-width: 1030px){
+    body{
+        /* background-color: #000; */
+        min-height: 100%;
+        min-width: 100%;
+    }
+    body main .middle-container{
+        display: flex;
+        align-items: center;
+        justify-content: stretch;
+        flex-direction: column;
+    }
+    body main .middle-container .cards{
+        margin-bottom: 20px;
+    }
+}
+@media (max-width: 770px){
+    body{
+        /* background-color: #000; */
+        min-height: 100%;
+        min-width: 100%;
+    }
+    .nav-section{
+        min-width: 100%;
+    }
+    .nav-section nav{
+        
+    }
+    body main .top-container{
+        display: flex;
+        align-items: center;
+        justify-content: stretch;
+        flex-direction: column;
+    }
+    body main .top-container .left-col{
+        margin-bottom: 20px;
+    }
+    body main .middle-container{
+        display: flex;
+        align-items: center;
+        justify-content: stretch;
+        flex-direction: column;
+    }
+    body main .middle-container .cards{
+        margin-bottom: 20px;
+    }
+}
+@media (max-width: 430px){
+    body{
+        /* background-color: #000; */
+        min-height: 100%;
+        min-width: 100%;
+    }
+    .nav-section{
+        min-width: 100%;
+    }
+    .nav-section nav{
+        
+    }
+    body main .top-container{
+        display: flex;
+        align-items: center;
+        justify-content: stretch;
+        flex-direction: column;
+    }
+    body main .top-container .left-col{
+        margin-bottom: 20px;
+    }
+    body main .middle-container{
+        display: flex;
+        align-items: center;
+        justify-content: stretch;
+        flex-direction: column;
+    }
+    body main .middle-container .cards{
+        margin-bottom: 20px;
+    }
+}
