@@ -11,7 +11,7 @@
         <link href="https://fonts.googleapis.com/css2?family=Dancing+Script:wght@600&family=Heebo:wght@200&family=Rubik+Bubbles&family=Secular+One&display=swap" rel="stylesheet">
         <link rel="stylesheet" href="assests/css/indexstyling.css" type="text/css">
         <title>Document</title>
-        <style></style>
+        <style></style> 
     
     </head>
     <body>
@@ -20,13 +20,18 @@
                 <h1 id="logo">Wilson's <span> Project</span></h1>
                 <?php
                     #$msg = '<h1>Hello World</h1> <br /> ';
-                    #$msg .= "Today's Date is: ". date('D d M Y').'<hr>';
-                    #echo $msg;
+                    $msg = "Today's Date is: ". date('D d M Y');
+                    echo $msg;
                 ?>
+                <input type="checkbox" id="check">
+                <label for="check">
+                    <i class="fa-solid fa-bars"></i>
+                </label>
                 <div class="links">
                 <a href="login.php">Login</a> 
                 <a href="register.php">Sign up</a>
                 </div>
+                
             </nav>
         </div>
         <main>
